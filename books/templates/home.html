@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+
+
+ <body>
+      <form action="/search/" method="post">
+          {{form}}
+           <button type="submit" value="OK">  Найти </button>
+          {% csrf_token %}
+      </form>
+      <form>
+      {% for book in books %}
+           <h2> {{book.name}} </h2>
+           <a href="{{ book.get_absolute_url }}"> Выбрать книгу </a>
+      {% endfor %}
+      </form>
+
+ <form action="/profile/info/" method="get">
+         <button type="submit" value="OK"> Профиль </button>
+     </form>
+
+ </body>
+</html>

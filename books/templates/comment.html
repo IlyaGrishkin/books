@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div class="">
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ new_comment }}
+      <button type="submit" name="button">Отправить</button>
+    </form>
+  </div>
+</body>
+</html>

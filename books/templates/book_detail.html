@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+     {% csrf_token %}
+</head>
+<body>
+   {% for b in book %}
+     <h2> {{ b.name }} </h2>
+     <p> {{ b.price }} $ </p>
+     <form action="/rating/{{book_id}}/" method="post">
+     {{ rating_form }}
+         <button type="submit" value="OK"> Отправить </button>
+          {% csrf_token %}
+     </form>
+     {% if b.description %}
+     <p>{{ b.description }}</p>
+     {% endif %}
+   {% endfor %}
+
+   <p> Средний рейтинг: {{ average_rating }}</p>
+     <form action="/comments/{{book_id}}/" method="post">
+         {{ comment_form }}
+         <button type="submit" value="OK"> Оставить комментарий </button>
+          {% csrf_token %}
+     </form>
+
+
+</body>
+</html>

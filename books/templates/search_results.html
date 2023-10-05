@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+ <body>
+ <h2> Результаты поиска: </h2>
+
+  {% for book in filtered_books %}
+       <h2> {{book.name}}</h2>
+       <a href="{{ book.get_absolute_url }}"> Выбрать книгу  </a>
+  {% endfor %}
+
+
+ </body>
+</html>
